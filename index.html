@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hukum Kekekalan Massa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,600;1,8..60,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F7F2E8;
+      --parchment: #EDE5D0;
+      --ink: #1A1208;
+      --brown-dark: #3D2B1F;
+      --brown-mid: #6B4226;
+      --brown-light: #A0693A;
+      --gold: #C8963C;
+      --gold-light: #E8C97A;
+      --blue-accent: #2A4A6B;
+      --red-accent: #8B2A2A;
+      --text-muted: #6B5A45;
+    }
+
+    body {
+      background-color: var(--cream);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    /* ── HEADER ─────────────────────────────── */
+    header {
+      background: var(--brown-dark);
+      color: var(--cream);
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 20px,
+        rgba(200,150,60,0.05) 20px,
+        rgba(200,150,60,0.05) 21px
+      );
+    }
+    .header-ornament {
+      font-size: 13px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.75rem;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.15;
+      color: #fff;
+      position: relative;
+    }
+    header h1 span {
+      color: var(--gold-light);
+    }
+    .header-sub {
+      margin-top: 0.75rem;
+      font-size: 15px;
+      color: var(--parchment);
+      letter-spacing: 1px;
+      position: relative;
+    }
+    .header-rule {
+      width: 80px;
+      height: 2px;
+      background: var(--gold);
+      margin: 1.25rem auto 0;
+      position: relative;
+    }
+
+    /* ── MAIN LAYOUT ─────────────────────────── */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    /* ── SECTION TITLES ─────────────────────── */
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 0.4rem;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--brown-dark);
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--parchment);
+      padding-bottom: 0.5rem;
+    }
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--brown-mid);
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    /* ── INTRO CARD ─────────────────────────── */
+    .intro-card {
+      background: var(--brown-dark);
+      color: var(--cream);
+      border-radius: 4px;
+      padding: 2rem 2.25rem;
+      margin-bottom: 3rem;
+      position: relative;
+      border-left: 5px solid var(--gold);
+    }
+    .intro-card p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+    .intro-card .law-formula {
+      display: block;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin: 1.25rem 0 0.5rem;
+      letter-spacing: 1px;
+    }
+
+    /* ── PENEMU SECTION ─────────────────────── */
+    .penemu-wrapper {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 640px) {
+      .penemu-wrapper { grid-template-columns: 1fr; }
+    }
+    .portrait-box {
+      text-align: center;
+    }
+    .portrait-frame {
+      width: 220px;
+      height: 280px;
+      margin: 0 auto;
+      border: 6px solid var(--brown-mid);
+      border-radius: 2px;
+      overflow: hidden;
+      box-shadow: 8px 8px 0 var(--parchment), 8px 8px 0 2px var(--brown-light);
+      position: relative;
+      background: var(--parchment);
+    }
+    .portrait-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    .portrait-fallback {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      background: var(--parchment);
+      color: var(--text-muted);
+    }
+    .portrait-caption {
+      margin-top: 0.85rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--brown-dark);
+    }
+    .portrait-years {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+      font-style: italic;
+    }
+    .bio-text p { margin-bottom: 1rem; color: var(--brown-dark); }
+    .bio-highlight {
+      background: var(--parchment);
+      border-left: 4px solid var(--gold);
+      padding: 0.85rem 1rem;
+      border-radius: 0 4px 4px 0;
+      font-style: italic;
+      color: var(--brown-mid);
+      margin: 1rem 0;
+    }
+
+    /* ── TIMELINE ───────────────────────────── */
+    .timeline {
+      position: relative;
+      margin-bottom: 3rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 16px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--parchment);
+    }
+    .tl-item {
+      display: flex;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+      align-items: flex-start;
+    }
+    .tl-dot {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--brown-dark);
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      border: 3px solid var(--cream);
+    }
+    .tl-content strong {
+      display: block;
+      color: var(--brown-dark);
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .tl-content span { font-size: 0.9rem; color: var(--text-muted); }
+
+    /* ── CONTOH / APLIKASI ─────────────────── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+    .app-card {
+      background: #fff;
+      border: 1px solid var(--parchment);
+      border-radius: 4px;
+      padding: 1.25rem;
+      border-top: 4px solid var(--gold);
+    }
+    .app-card .icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .app-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--brown-dark);
+      margin-bottom: 0.4rem;
+    }
+    .app-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ── REAKSI KIMIA ───────────────────────── */
+    .reaction-box {
+      background: var(--blue-accent);
+      color: #fff;
+      border-radius: 4px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    .reaction-box .section-label { color: #a8c8e8; }
+    .reaction-box h2 { color: #fff; border-color: rgba(255,255,255,0.15); }
+    .equation {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1.25rem 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+    }
+    .eq-mol {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 0.4rem 0.85rem;
+      border-radius: 4px;
+    }
+    .eq-mol .formula { font-size: 1.2rem; font-weight: 700; color: var(--gold-light); }
+    .eq-mol .massa { font-size: 0.8rem; color: rgba(255,255,255,0.7); margin-top: 2px; }
+    .eq-arrow { font-size: 1.5rem; color: var(--gold-light); }
+    .eq-plus { font-size: 1.4rem; color: rgba(255,255,255,0.6); }
+    .eq-summary {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      font-style: italic;
+    }
+
+    /* ── KUTIPAN ────────────────────────────── */
+    blockquote {
+      border-left: 5px solid var(--gold);
+      padding: 1rem 1.5rem;
+      margin: 0 0 3rem;
+      background: var(--parchment);
+      border-radius: 0 4px 4px 0;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--brown-dark);
+      line-height: 1.7;
+    }
+    blockquote cite {
+      display: block;
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: normal;
+    }
+
+    /* ── FOOTER ─────────────────────────────── */
+    footer {
+      background: var(--brown-dark);
+      color: var(--parchment);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+    }
+    footer span { color: var(--gold); }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--parchment);
+      margin: 2.5rem 0;
+    }
+    p { margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <p class="header-ornament">Ilmu Kimia · Materi Pokok</p>
+  <h1>Hukum <span>Kekekalan</span> Massa</h1>
+  <p class="header-sub">Pondasi Ilmu Kimia Modern · Antoine Lavoisier, 1789</p>
+  <div class="header-rule"></div>
+</header>
+
+<div class="container">
+
+  <!-- DEFINISI -->
+  <section>
+    <p class="section-label">Definisi Utama</p>
+    <h2>Apa Itu Hukum Kekekalan Massa?</h2>
+    <div class="intro-card">
+      <p>
+        Hukum Kekekalan Massa menyatakan bahwa <strong>massa total zat-zat sebelum reaksi kimia sama dengan massa total zat-zat setelah reaksi kimia</strong> berlangsung, dalam sistem tertutup. Massa tidak dapat diciptakan maupun dimusnahkan — hanya berubah bentuk.
+      </p>
+      <em class="law-formula">massa reaktan = massa produk</em>
+      <p style="font-size:0.9rem; color: var(--parchment); margin-top:0.5rem; text-align:center;">
+        "In nature nothing is created, nothing is lost, everything changes." — Lavoisier
+      </p>
+    </div>
+  </section>
+
+  <!-- PENEMU -->
+  <section>
+    <p class="section-label">Sang Penemu</p>
+    <h2>Antoine-Laurent de Lavoisier</h2>
+    <div class="penemu-wrapper">
+      <div class="portrait-box">
+        <div class="portrait-frame">
+          <img
+            src="C:\Users\akmal\OneDrive - Universitas Negeri Jakarta (UNJ)\Pictures\Gambar SKRIPSI\Lavoiser.jpg"
+            alt="Potret Antoine Lavoisier"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div class="portrait-fallback" style="display:none;">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <circle cx="30" cy="20" r="14" stroke="#A0693A" stroke-width="2"/>
+              <path d="M5 55 C5 38 55 38 55 55" stroke="#A0693A" stroke-width="2"/>
+            </svg>
+            <span style="font-size:12px;">Lavoisier</span>
+          </div>
+        </div>
+        <p class="portrait-caption">Antoine-Laurent de Lavoisier</p>
+        <p class="portrait-years">26 Agustus 1743 — 8 Mei 1794</p>
+        <p class="portrait-years" style="margin-top:4px;">Paris, Prancis</p>
+      </div>
+      <div class="bio-text">
+        <p>
+          Antoine-Laurent de Lavoisier adalah seorang ilmuwan Prancis yang dikenal sebagai <strong>"Bapak Kimia Modern"</strong>. Ia lahir di Paris pada tahun 1743 dari keluarga bangsawan dan menerima pendidikan hukum sebelum beralih sepenuhnya ke ilmu pengetahuan alam.
+        </p>
+        <div class="bio-highlight">
+          "Lavoisier mengubah kimia dari sekadar seni memasak menjadi ilmu pengetahuan yang berlandaskan pengukuran dan eksperimen terstruktur."
+        </div>
+        <p>
+          Melalui serangkaian percobaan terkenal dengan pembakaran dan respirasi, ia membuktikan bahwa oksigen berperan penting dalam proses pembakaran — menumbangkan teori flogiston yang telah dipercaya selama berabad-abad.
+        </p>
+        <p>
+          Pada tahun <strong>1789</strong>, Lavoisier mempublikasikan karyanya <em>Traité Élémentaire de Chimie</em> (Risalah Dasar Kimia), yang secara sistematis merumuskan Hukum Kekekalan Massa dan meletakkan dasar tata nama kimia modern.
+        </p>
+        <p>
+          Tragisnya, ia dieksekusi pada usia 50 tahun di masa Revolusi Prancis. Matematikawan Joseph-Louis Lagrange berkomentar, <em>"Butuh waktu sedetik untuk memenggal kepalanya, namun seratus tahun tidak cukup untuk menghasilkan kepala seperti itu."</em>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REAKSI KIMIA CONTOH -->
+  <div class="reaction-box">
+    <p class="section-label">Ilustrasi Reaksi</p>
+    <h2>Pembakaran Hidrogen (H₂ + O₂)</h2>
+    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1rem; font-size:0.95rem;">
+      Salah satu percobaan khas yang digunakan Lavoisier untuk membuktikan hukumnya:
+    </p>
+    <div class="equation">
+      <div class="eq-mol">
+        <div class="formula">2H₂</div>
+        <div class="massa">4 gram</div>
+      </div>
+      <span class="eq-plus">+</span>
+      <div class="eq-mol">
+        <div class="formula">O₂</div>
+        <div class="massa">32 gram</div>
+      </div>
+      <span class="eq-arrow">→</span>
+      <div class="eq-mol">
+        <div class="formula">2H₂O</div>
+        <div class="massa">36 gram</div>
+      </div>
+    </div>
+    <p class="eq-summary">4 g + 32 g = 36 g · Massa reaktan = Massa produk ✓</p>
+  </div>
+
+  <!-- SEJARAH SINGKAT -->
+  <section>
+    <p class="section-label">Linimasa</p>
+    <h2>Sejarah Penemuan</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot">1756</div>
+        <div class="tl-content">
+          <strong>Mikhail Lomonosov — Pengamatan Awal</strong>
+          <span>Ilmuwan Rusia ini pertama kali mencatat kekekalan massa dalam eksperimen pembakaran, meskipun karyanya kurang dikenal luas di Eropa Barat.</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">1772</div>
+        <div class="tl-content">
+          <strong>Lavoisier Mulai Eksperimen Pembakaran</strong>
+          <span>Ia mulai menimbang zat sebelum dan setelah pembakaran secara teliti, menemukan bahwa massa selalu terjaga.</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">1789</div>
+        <div class="tl-content">
+          <strong>Publikasi Traité Élémentaire de Chimie</strong>
+          <span>Hukum Kekekalan Massa dirumuskan secara resmi dan dipublikasikan, mengubah fondasi kimia untuk selamanya.</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">1905</div>
+        <div class="tl-content">
+          <strong>Revisi oleh Einstein — E = mc²</strong>
+          <span>Einstein menunjukkan bahwa massa dan energi dapat saling berkonversi, merevisi hukum ini menjadi "kekekalan massa-energi" dalam konteks relativitas.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APLIKASI -->
+  <section>
+    <p class="section-label">Penerapan</p>
+    <h2>Aplikasi dalam Kehidupan Nyata</h2>
+    <div class="cards-grid">
+      <div class="app-card">
+        <div class="icon">🔥</div>
+        <h4>Industri Pembakaran</h4>
+        <p>Menghitung jumlah bahan bakar dan oksigen yang dibutuhkan, serta produk gas yang dihasilkan dalam pembakaran mesin.</p>
+      </div>
+      <div class="app-card">
+        <div class="icon">⚗️</div>
+        <h4>Stoikiometri Reaksi</h4>
+        <p>Dasar perhitungan kuantitatif dalam kimia: menentukan massa reaktan dan produk dalam persamaan reaksi.</p>
+      </div>
+      <div class="app-card">
+        <div class="icon">🏭</div>
+        <h4>Industri Kimia</h4>
+        <p>Merancang reaktor kimia agar tidak ada massa yang terbuang, mengoptimalkan efisiensi produksi di pabrik.</p>
+      </div>
+      <div class="app-card">
+        <div class="icon">🌍</div>
+        <h4>Analisis Lingkungan</h4>
+        <p>Melacak aliran massa polutan di ekosistem, seperti siklus karbon dan nitrogen di alam.</p>
+      </div>
+      <div class="app-card">
+        <div class="icon">💊</div>
+        <h4>Farmasi</h4>
+        <p>Memastikan formulasi obat menghasilkan produk dengan massa yang tepat dan tidak ada zat aktif yang hilang.</p>
+      </div>
+      <div class="app-card">
+        <div class="icon">🍞</div>
+        <h4>Pengolahan Pangan</h4>
+        <p>Menghitung yield (hasil) produksi makanan: berapa gram roti yang dihasilkan dari sekian gram terigu, air, dan ragi.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- PERBEDAAN MASSA & ENERGI -->
+  <section>
+    <p class="section-label">Konsep Lanjutan</p>
+    <h2>Kekekalan Massa vs. Kekekalan Energi</h2>
+    <p>
+      Dalam kimia klasik, hukum Lavoisier berlaku secara mutlak. Namun, fisika modern yang diperkenalkan Einstein melalui persamaan <strong>E = mc²</strong> mengungkapkan bahwa massa dan energi bisa saling dikonversi. Dalam reaksi nuklir, sejumlah kecil massa dapat diubah menjadi energi yang sangat besar.
+    </p>
+    <p>
+      Oleh karena itu, dalam konteks yang lebih luas dikenal istilah <strong>Hukum Kekekalan Massa-Energi</strong>: jumlah total massa dan energi dalam sistem tertutup selalu konstan. Untuk reaksi kimia biasa, perubahan ini sangat kecil sehingga hukum Lavoisier tetap berlaku secara praktis.
+    </p>
+
+    <blockquote>
+      <p>"Kita tidak pernah kehilangan apapun; kita hanya mengubah bentuknya."</p>
+      <cite>— Inspirasi dari pemikiran Antoine Lavoisier</cite>
+    </blockquote>
+  </section>
+
+  <!-- RANGKUMAN -->
+  <section>
+    <p class="section-label">Rangkuman</p>
+    <h2>Poin-Poin Kunci</h2>
+    <p>Berikut adalah hal-hal terpenting yang perlu diingat tentang Hukum Kekekalan Massa:</p>
+    <ul style="list-style: none; padding: 0; margin-bottom:2rem;">
+      <li style="padding: 0.6rem 0 0.6rem 1.5rem; border-bottom: 1px solid var(--parchment); position: relative; color: var(--brown-dark);">
+        <span style="position:absolute; left:0; color: var(--gold); font-weight:700;">›</span>
+        Massa total reaktan selalu sama dengan massa total produk dalam reaksi kimia.
+      </li>
+      <li style="padding: 0.6rem 0 0.6rem 1.5rem; border-bottom: 1px solid var(--parchment); position: relative; color: var(--brown-dark);">
+        <span style="position:absolute; left:0; color: var(--gold); font-weight:700;">›</span>
+        Dikemukakan oleh Antoine Lavoisier pada tahun 1789 melalui percobaan pembakaran yang teliti.
+      </li>
+      <li style="padding: 0.6rem 0 0.6rem 1.5rem; border-bottom: 1px solid var(--parchment); position: relative; color: var(--brown-dark);">
+        <span style="position:absolute; left:0; color: var(--gold); font-weight:700;">›</span>
+        Hukum ini merupakan dasar dari stoikiometri dan perhitungan kuantitatif kimia.
+      </li>
+      <li style="padding: 0.6rem 0 0.6rem 1.5rem; border-bottom: 1px solid var(--parchment); position: relative; color: var(--brown-dark);">
+        <span style="position:absolute; left:0; color: var(--gold); font-weight:700;">›</span>
+        Dalam fisika modern, direvisi menjadi Hukum Kekekalan Massa-Energi (Einstein, 1905).
+      </li>
+      <li style="padding: 0.6rem 0 0.6rem 1.5rem; position: relative; color: var(--brown-dark);">
+        <span style="position:absolute; left:0; color: var(--gold); font-weight:700;">›</span>
+        Berlaku untuk sistem tertutup di mana tidak ada zat yang masuk atau keluar selama reaksi.
+      </li>
+    </ul>
+  </section>
+
+</div>
+
+<footer>
+  <p>Materi Kimia · <span>Hukum Kekekalan Massa</span> · Lavoisier (1789)</p>
+</footer>
+
+</body>
+</html>
