@@ -4,334 +4,171 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hukum Kekekalan Massa</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,600;1,8..60,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FFF7ED;
+  --surface:#FFFFFF;
+  --surface2:#FFEDD5;
+  --orange:#F97316;
+  --orange-dark:#C2410C;
+  --orange-deep:#7C2D12;
+  --orange-bright:#FB923C;
+  --orange-light:#FED7AA;
+  --yellow:#FBBF24;
+  --text:#431407;
+  --muted:#9A3412;
+  --border:rgba(249,115,22,0.2);
+  --border-strong:rgba(249,115,22,0.45);
+}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.75}
 
-    :root {
-      --bg:          #FFF7ED;
-      --surface:     #FFFFFF;
-      --surface2:    #FFEDD5;
-      --surface3:    #FEF3C7;
-      --orange:      #F97316;
-      --orange-dark: #C2410C;
-      --orange-deep: #7C2D12;
-      --orange-bright:#FB923C;
-      --orange-light: #FED7AA;
-      --yellow:      #FBBF24;
-      --text:        #431407;
-      --muted:       #92400E;
-      --border:      rgba(249,115,22,0.22);
-      --border-strong:rgba(249,115,22,0.45);
-    }
+header{
+  padding:4rem 2rem 3rem;text-align:center;
+  background:linear-gradient(150deg,#C2410C 0%,#EA580C 30%,#F97316 65%,#FBBF24 100%);
+  border-bottom:3px solid var(--orange-dark);
+  position:relative;overflow:hidden;
+}
+header::after{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:300px;height:300px;border-radius:50%;
+  border:60px solid rgba(255,255,255,0.07);
+}
+header::before{
+  content:'';position:absolute;bottom:-80px;left:-50px;
+  width:250px;height:250px;border-radius:50%;
+  background:rgba(255,255,255,0.05);
+}
+.badge{display:inline-block;background:rgba(255,255,255,0.18);backdrop-filter:blur(4px);
+  border:1px solid rgba(255,255,255,0.3);color:#fff;
+  font-size:11px;letter-spacing:4px;text-transform:uppercase;
+  padding:6px 16px;border-radius:20px;margin-bottom:1.25rem;position:relative}
+header h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,5vw,3.2rem);
+  line-height:1.2;color:#fff;position:relative;text-shadow:0 2px 8px rgba(124,45,18,0.35)}
+header h1 em{color:#FEF9C3;font-style:normal}
+.header-tagline{margin-top:.75rem;color:rgba(255,255,255,0.8);font-size:.95rem;letter-spacing:.5px;position:relative}
+.teal-rule{width:60px;height:3px;background:rgba(255,255,255,0.5);margin:1.25rem auto 0;border-radius:2px}
 
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-size: 17px;
-      line-height: 1.75;
-    }
+.container{max-width:860px;margin:0 auto;padding:3rem 2rem}
+.section-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--orange-dark);margin-bottom:.4rem;font-weight:600}
+h2{font-family:'DM Serif Display',serif;font-size:1.7rem;color:var(--orange-deep);
+  margin-bottom:1.25rem;padding-bottom:.5rem;border-bottom:2px solid var(--border-strong)}
+h3{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--orange-dark);margin:1.5rem 0 .5rem}
+p{margin-bottom:1rem;color:var(--text)}
 
-    /* ── HEADER ─────────────────────────────── */
-    header {
-      background: linear-gradient(135deg, #92400E 0%, #C2410C 20%, #EA580C 50%, #F97316 75%, #FBBF24 100%);
-      color: #fff;
-      padding: 3.5rem 2rem 2.75rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      border-bottom: 3px solid var(--orange-dark);
-    }
-    header::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 20px,
-        rgba(255,255,255,0.04) 20px,
-        rgba(255,255,255,0.04) 21px
-      );
-    }
-    header::after {
-      content: '';
-      position: absolute;
-      top: -80px; right: -80px;
-      width: 300px; height: 300px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.06);
-    }
-    .header-ornament {
-      font-size: 13px;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.82);
-      margin-bottom: 0.75rem;
-      position: relative;
-    }
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      font-weight: 900;
-      line-height: 1.15;
-      color: #fff;
-      position: relative;
-      text-shadow: 0 2px 10px rgba(124,45,18,0.4);
-    }
-    header h1 span { color: #FEF9C3; }
-    .header-sub {
-      margin-top: 0.75rem;
-      font-size: 15px;
-      color: rgba(255,255,255,0.8);
-      letter-spacing: 1px;
-      position: relative;
-    }
-    .header-rule {
-      width: 80px;
-      height: 3px;
-      background: rgba(255,255,255,0.5);
-      margin: 1.25rem auto 0;
-      border-radius: 2px;
-    }
+/* INTRO */
+.def-box{background:linear-gradient(135deg,var(--orange-dark) 0%,var(--orange) 100%);
+  border-radius:12px;padding:1.75rem 2rem;margin-bottom:3rem;
+  box-shadow:0 8px 32px rgba(234,88,12,0.35)}
+.def-box p{color:#fff}
+.formula-center{text-align:center;font-family:'DM Serif Display',serif;font-size:1.3rem;
+  color:#FEF9C3;margin:1rem 0;letter-spacing:.5px;
+  background:rgba(0,0,0,0.15);border-radius:6px;padding:.5rem 1rem;display:block}
 
-    /* ── MAIN LAYOUT ─────────────────────────── */
-    .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+/* PORTRAIT */
+.penemu-grid{display:grid;grid-template-columns:230px 1fr;gap:2.5rem;margin-bottom:3rem;align-items:start}
+@media(max-width:600px){.penemu-grid{grid-template-columns:1fr}}
+.portrait-wrap{text-align:center}
+.portrait-img{
+  width:200px;height:260px;margin:0 auto;overflow:hidden;
+  border:3px solid var(--orange);border-radius:8px;
+  background:var(--surface2);display:block;
+  box-shadow:6px 6px 0 var(--orange-light);
+}
+.portrait-img img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.portrait-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:8px;background:var(--surface2);color:var(--muted)}
+.p-name{margin-top:.75rem;font-family:'DM Serif Display',serif;font-size:1rem;color:var(--orange-deep)}
+.p-year{font-size:.8rem;color:var(--muted);margin-top:2px;font-style:italic}
+.bio-text p{margin-bottom:1rem;color:var(--text)}
+.bio-highlight{
+  background:var(--surface2);border-left:4px solid var(--orange);
+  padding:.85rem 1rem;border-radius:0 8px 8px 0;font-style:italic;
+  color:var(--orange-dark);margin:1rem 0;box-shadow:inset 0 0 0 1px var(--border)}
 
-    /* ── SECTION TITLES ─────────────────────── */
-    .section-label {
-      font-size: 11px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--orange-dark);
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 0.4rem;
-      font-weight: 700;
-    }
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: var(--orange-deep);
-      margin-bottom: 1.25rem;
-      border-bottom: 2px solid var(--border-strong);
-      padding-bottom: 0.5rem;
-    }
-    h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--orange-dark);
-      margin: 1.5rem 0 0.5rem;
-    }
+/* TIMELINE */
+.timeline{position:relative;margin-bottom:3rem}
+.timeline::before{
+  content:'';position:absolute;left:16px;top:0;bottom:0;width:2px;
+  background:linear-gradient(180deg,var(--orange),var(--orange-light))}
+.tl-item{display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start}
+.tl-dot{
+  width:34px;height:34px;border-radius:50%;background:var(--orange);color:#fff;
+  font-family:'DM Serif Display',serif;font-weight:700;font-size:10px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;position:relative;z-index:1;
+  border:3px solid var(--orange-light);box-shadow:0 0 0 4px rgba(249,115,22,0.18)}
+.tl-content strong{display:block;color:var(--orange-deep);
+  font-family:'DM Serif Display',serif;font-weight:700;font-size:.95rem}
+.tl-content span{font-size:.9rem;color:var(--muted)}
 
-    /* ── INTRO CARD ─────────────────────────── */
-    .intro-card {
-      background: linear-gradient(135deg, var(--orange-dark) 0%, var(--orange) 100%);
-      color: #fff;
-      border-radius: 10px;
-      padding: 2rem 2.25rem;
-      margin-bottom: 3rem;
-      box-shadow: 0 8px 32px rgba(234,88,12,0.32);
-    }
-    .intro-card p { font-size: 1.05rem; line-height: 1.8; color: #fff; }
-    .intro-card .law-formula {
-      display: block;
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #FEF9C3;
-      margin: 1.25rem 0 0.5rem;
-      letter-spacing: 1px;
-      background: rgba(0,0,0,0.15);
-      border-radius: 6px;
-      padding: 0.5rem 1rem;
-    }
+/* CARDS */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:3rem}
+.app-card{background:var(--surface);border:1px solid var(--border-strong);border-radius:10px;
+  padding:1.25rem;border-top:4px solid var(--orange)}
+.app-card .icon{font-size:1.75rem;margin-bottom:.5rem}
+.app-card h4{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--orange-deep);margin-bottom:.4rem}
+.app-card p{font-size:.875rem;color:var(--muted);margin:0;line-height:1.6}
 
-    /* ── PENEMU SECTION ─────────────────────── */
-    .penemu-wrapper {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 2.5rem;
-      align-items: start;
-      margin-bottom: 3rem;
-    }
-    @media (max-width: 640px) { .penemu-wrapper { grid-template-columns: 1fr; } }
-    .portrait-box { text-align: center; }
-    .portrait-frame {
-      width: 220px;
-      height: 280px;
-      margin: 0 auto;
-      border: 5px solid var(--orange);
-      border-radius: 6px;
-      overflow: hidden;
-      box-shadow: 8px 8px 0 var(--orange-light);
-      position: relative;
-      background: var(--surface2);
-    }
-    .portrait-frame img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: top center; display: block;
-    }
-    .portrait-fallback {
-      width: 100%; height: 100%;
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column; gap: 8px;
-      background: var(--surface2); color: var(--muted);
-    }
-    .portrait-caption {
-      margin-top: 0.85rem;
-      font-family: 'Playfair Display', serif;
-      font-size: 0.95rem; font-weight: 700;
-      color: var(--orange-deep);
-    }
-    .portrait-years { font-size: 0.8rem; color: var(--muted); margin-top: 2px; font-style: italic; }
-    .bio-text p { margin-bottom: 1rem; color: var(--text); }
-    .bio-highlight {
-      background: var(--surface2);
-      border-left: 4px solid var(--orange);
-      padding: 0.85rem 1rem;
-      border-radius: 0 8px 8px 0;
-      font-style: italic;
-      color: var(--orange-dark);
-      margin: 1rem 0;
-      box-shadow: inset 0 0 0 1px var(--border);
-    }
+/* REAKSI KIMIA */
+.reaction-box{
+  background:linear-gradient(135deg,var(--orange-deep) 0%,var(--orange-dark) 50%,var(--orange) 100%);
+  color:#fff;border-radius:12px;padding:1.75rem 2rem;margin-bottom:3rem;
+  text-align:center;box-shadow:0 8px 32px rgba(194,65,12,0.35)}
+.reaction-box .section-tag{color:rgba(255,255,255,0.75)}
+.reaction-box h2{color:#fff;border-color:rgba(255,255,255,0.2)}
+.equation{display:flex;align-items:center;justify-content:center;
+  flex-wrap:wrap;gap:.75rem;margin:1.25rem 0;
+  font-family:'DM Serif Display',serif;font-size:1.1rem}
+.eq-mol{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);
+  padding:.4rem .85rem;border-radius:6px}
+.eq-mol .formula{font-size:1.2rem;font-weight:700;color:#FEF9C3}
+.eq-mol .massa{font-size:.8rem;color:rgba(255,255,255,0.75);margin-top:2px}
+.eq-arrow{font-size:1.5rem;color:#FEF9C3}
+.eq-plus{font-size:1.4rem;color:rgba(255,255,255,0.65)}
+.eq-summary{margin-top:1rem;font-size:.9rem;color:rgba(255,255,255,0.8);font-style:italic}
 
-    /* ── TIMELINE ───────────────────────────── */
-    .timeline { position: relative; margin-bottom: 3rem; }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 16px; top: 0; bottom: 0;
-      width: 2px;
-      background: linear-gradient(180deg, var(--orange), var(--orange-light));
-    }
-    .tl-item { display: flex; gap: 1.25rem; margin-bottom: 1.5rem; align-items: flex-start; }
-    .tl-dot {
-      width: 34px; height: 34px;
-      border-radius: 50%;
-      background: var(--orange);
-      color: #fff;
-      font-family: 'Playfair Display', serif;
-      font-weight: 700; font-size: 10px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; position: relative; z-index: 1;
-      border: 3px solid var(--orange-light);
-      box-shadow: 0 0 0 4px rgba(249,115,22,0.18);
-    }
-    .tl-content strong {
-      display: block; color: var(--orange-deep);
-      font-family: 'Playfair Display', serif;
-      font-weight: 700; font-size: 0.95rem;
-    }
-    .tl-content span { font-size: 0.9rem; color: var(--muted); }
+/* QUOTE */
+blockquote{border-left:4px solid var(--orange);padding:.85rem 1.25rem;
+  background:var(--surface2);border-radius:0 8px 8px 0;margin:0 0 3rem;
+  box-shadow:inset 0 0 0 1px var(--border)}
+blockquote p{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--orange-dark);font-style:italic;margin:0}
+blockquote cite{display:block;margin-top:.5rem;font-size:.8rem;color:var(--muted);font-style:normal}
 
-    /* ── CARDS ─────────────────────────────── */
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.25rem;
-      margin-bottom: 3rem;
-    }
-    .app-card {
-      background: var(--surface);
-      border: 1px solid var(--border-strong);
-      border-radius: 10px;
-      padding: 1.25rem;
-      border-top: 4px solid var(--orange);
-    }
-    .app-card .icon { font-size: 2rem; margin-bottom: 0.5rem; }
-    .app-card h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem; font-weight: 700;
-      color: var(--orange-deep); margin-bottom: 0.4rem;
-    }
-    .app-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; margin: 0; }
+.summary-list{list-style:none;padding:0;margin-bottom:2rem}
+.summary-list li{padding:.6rem 0 .6rem 1.5rem;border-bottom:1px solid var(--border);
+  position:relative;color:var(--text);font-size:.95rem}
+.summary-list li::before{content:'›';position:absolute;left:0;color:var(--orange);font-weight:700;font-size:1.2rem}
 
-    /* ── REAKSI KIMIA ───────────────────────── */
-    .reaction-box {
-      background: linear-gradient(135deg, var(--orange-deep) 0%, var(--orange-dark) 50%, var(--orange) 100%);
-      color: #fff;
-      border-radius: 12px;
-      padding: 1.75rem 2rem;
-      margin-bottom: 3rem;
-      text-align: center;
-      box-shadow: 0 8px 32px rgba(194,65,12,0.35);
-    }
-    .reaction-box .section-label { color: rgba(255,255,255,0.75); }
-    .reaction-box h2 { color: #fff; border-color: rgba(255,255,255,0.2); }
-    .equation {
-      display: flex; align-items: center; justify-content: center;
-      flex-wrap: wrap; gap: 0.75rem; margin: 1.25rem 0;
-      font-family: 'Playfair Display', serif; font-size: 1.1rem;
-    }
-    .eq-mol {
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.3);
-      padding: 0.4rem 0.85rem; border-radius: 6px;
-    }
-    .eq-mol .formula { font-size: 1.2rem; font-weight: 700; color: #FEF9C3; }
-    .eq-mol .massa { font-size: 0.8rem; color: rgba(255,255,255,0.75); margin-top: 2px; }
-    .eq-arrow { font-size: 1.5rem; color: #FEF9C3; }
-    .eq-plus { font-size: 1.4rem; color: rgba(255,255,255,0.65); }
-    .eq-summary { margin-top: 1rem; font-size: 0.9rem; color: rgba(255,255,255,0.8); font-style: italic; }
-
-    /* ── KUTIPAN ────────────────────────────── */
-    blockquote {
-      border-left: 5px solid var(--orange);
-      padding: 1rem 1.5rem;
-      margin: 0 0 3rem;
-      background: var(--surface2);
-      border-radius: 0 8px 8px 0;
-    }
-    blockquote p {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem; font-style: italic;
-      color: var(--orange-dark); line-height: 1.7; margin: 0;
-    }
-    blockquote cite {
-      display: block; margin-top: 0.75rem;
-      font-size: 0.85rem; color: var(--muted); font-style: normal;
-    }
-
-    /* ── FOOTER ─────────────────────────────── */
-    footer {
-      background: linear-gradient(90deg, var(--orange-deep), var(--orange-dark));
-      color: rgba(255,255,255,0.72);
-      text-align: center;
-      padding: 1.5rem; font-size: 0.85rem; letter-spacing: 1px;
-    }
-    footer span { color: var(--orange-light); }
-
-    .divider { border: none; border-top: 2px solid var(--orange-light); margin: 2.5rem 0; }
-    p { margin-bottom: 1rem; }
+footer{background:linear-gradient(90deg,var(--orange-deep),var(--orange-dark));
+  text-align:center;padding:1.5rem;font-size:.85rem;color:rgba(255,255,255,0.7)}
+footer span{color:var(--orange-light)}
+hr{border:none;border-top:2px solid var(--orange-light);margin:2.5rem 0}
   </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
-  <p class="header-ornament">Hukum Dasar Kimia</p>
-  <h1>Hukum <span>Kekekalan</span> Massa</h1>
-  <p class="header-sub">Antoine Lavoisier, 1789</p>
-  <div class="header-rule"></div>
+  <div class="badge">Hukum Dasar Kimia</div>
+  <h1>Hukum <em>Kekekalan</em> Massa</h1>
+  <p class="header-tagline">Antoine Lavoisier · 1789</p>
+  <div class="teal-rule"></div>
 </header>
 
 <div class="container">
 
   <!-- DEFINISI -->
   <section>
-    <p class="section-label">Definisi Utama</p>
+    <p class="section-tag">Definisi Utama</p>
     <h2>Apa Itu Hukum Kekekalan Massa?</h2>
-    <div class="intro-card">
+    <div class="def-box">
       <p>
         Hukum Kekekalan Massa menyatakan bahwa <strong>massa total zat-zat sebelum reaksi kimia sama dengan massa total zat-zat setelah reaksi kimia</strong> berlangsung, dalam sistem tertutup. Massa tidak dapat diciptakan maupun dimusnahkan — hanya berubah bentuk.
       </p>
-      <em class="law-formula">massa total reaktan = massa total produk</em>
-      <p style="font-size:0.9rem; color:rgba(255,255,255,0.8); margin-top:0.5rem; text-align:center;">
+      <em class="formula-center">massa total reaktan = massa total produk</em>
+      <p style="text-align:center;font-size:.9rem;color:rgba(255,255,255,0.8)">
         "In nature nothing is created, nothing is lost, everything changes." — Lavoisier
       </p>
     </div>
@@ -339,11 +176,11 @@
 
   <!-- PENEMU -->
   <section>
-    <p class="section-label">Sang Penemu</p>
+    <p class="section-tag">Sang Penemu</p>
     <h2>Antoine-Laurent de Lavoisier</h2>
-    <div class="penemu-wrapper">
-      <div class="portrait-box">
-        <div class="portrait-frame">
+    <div class="penemu-grid">
+      <div class="portrait-wrap">
+        <div class="portrait-img">
           <img
             src="Lavoiser.jpg"
             alt="Potret Antoine Lavoisier"
@@ -354,12 +191,12 @@
               <circle cx="30" cy="20" r="14" stroke="#C2410C" stroke-width="2"/>
               <path d="M5 55 C5 38 55 38 55 55" stroke="#C2410C" stroke-width="2"/>
             </svg>
-            <span style="font-size:12px; color:var(--muted);">Lavoisier</span>
+            <span style="font-size:12px;color:var(--muted);">Lavoisier</span>
           </div>
         </div>
-        <p class="portrait-caption">Antoine-Laurent de Lavoisier</p>
-        <p class="portrait-years">26 Agustus 1743 — 8 Mei 1794</p>
-        <p class="portrait-years" style="margin-top:4px;">Paris, Prancis</p>
+        <p class="p-name">Antoine-Laurent de Lavoisier</p>
+        <p class="p-year">26 Agustus 1743 — 8 Mei 1794</p>
+        <p class="p-year">Paris, Prancis</p>
       </div>
       <div class="bio-text">
         <p>
@@ -383,9 +220,9 @@
 
   <!-- REAKSI KIMIA CONTOH -->
   <div class="reaction-box">
-    <p class="section-label">Ilustrasi Reaksi</p>
+    <p class="section-tag">Ilustrasi Reaksi</p>
     <h2>Pembakaran Hidrogen (H₂ + O₂)</h2>
-    <p style="color:rgba(255,255,255,0.8); margin-bottom:1rem; font-size:0.95rem;">
+    <p style="color:rgba(255,255,255,0.8);margin-bottom:1rem;font-size:.95rem;">
       Salah satu percobaan khas yang digunakan Lavoisier untuk membuktikan hukumnya:
     </p>
     <div class="equation">
@@ -409,7 +246,7 @@
 
   <!-- SEJARAH SINGKAT -->
   <section>
-    <p class="section-label">Linimasa</p>
+    <p class="section-tag">Linimasa</p>
     <h2>Sejarah Penemuan</h2>
     <div class="timeline">
       <div class="tl-item">
@@ -445,7 +282,7 @@
 
   <!-- APLIKASI -->
   <section>
-    <p class="section-label">Penerapan</p>
+    <p class="section-tag">Penerapan</p>
     <h2>Aplikasi dalam Kehidupan Nyata</h2>
     <div class="cards-grid">
       <div class="app-card">
@@ -481,11 +318,11 @@
     </div>
   </section>
 
-  <hr class="divider" />
+  <hr/>
 
   <!-- PERBEDAAN MASSA & ENERGI -->
   <section>
-    <p class="section-label">Konsep Lanjutan</p>
+    <p class="section-tag">Konsep Lanjutan</p>
     <h2>Kekekalan Massa vs Kekekalan Energi</h2>
     <p>
       Dalam kimia klasik, hukum Lavoisier berlaku secara mutlak. Namun, fisika modern yang diperkenalkan Einstein melalui persamaan <strong>E = mc²</strong> mengungkapkan bahwa massa dan energi bisa saling dikonversi. Dalam reaksi nuklir, sejumlah kecil massa dapat diubah menjadi energi yang sangat besar.
@@ -502,30 +339,15 @@
 
   <!-- RANGKUMAN -->
   <section>
-    <p class="section-label">Rangkuman</p>
+    <p class="section-tag">Rangkuman</p>
     <h2>Poin-Poin Kunci</h2>
     <p>Berikut adalah hal-hal terpenting yang perlu diingat tentang Hukum Kekekalan Massa:</p>
-    <ul style="list-style:none; padding:0; margin-bottom:2rem;">
-      <li style="padding:0.6rem 0 0.6rem 1.5rem; border-bottom:1px solid var(--border); position:relative; color:var(--text);">
-        <span style="position:absolute; left:0; color:var(--orange); font-weight:700; font-size:1.1rem;">›</span>
-        Massa total reaktan selalu sama dengan massa total produk dalam reaksi kimia.
-      </li>
-      <li style="padding:0.6rem 0 0.6rem 1.5rem; border-bottom:1px solid var(--border); position:relative; color:var(--text);">
-        <span style="position:absolute; left:0; color:var(--orange); font-weight:700; font-size:1.1rem;">›</span>
-        Dikemukakan oleh Antoine Lavoisier pada tahun 1789 melalui percobaan pembakaran yang teliti.
-      </li>
-      <li style="padding:0.6rem 0 0.6rem 1.5rem; border-bottom:1px solid var(--border); position:relative; color:var(--text);">
-        <span style="position:absolute; left:0; color:var(--orange); font-weight:700; font-size:1.1rem;">›</span>
-        Hukum ini merupakan dasar dari stoikiometri dan perhitungan kuantitatif kimia.
-      </li>
-      <li style="padding:0.6rem 0 0.6rem 1.5rem; border-bottom:1px solid var(--border); position:relative; color:var(--text);">
-        <span style="position:absolute; left:0; color:var(--orange); font-weight:700; font-size:1.1rem;">›</span>
-        Dalam fisika modern, direvisi menjadi Hukum Kekekalan Massa-Energi (Einstein, 1905).
-      </li>
-      <li style="padding:0.6rem 0 0.6rem 1.5rem; position:relative; color:var(--text);">
-        <span style="position:absolute; left:0; color:var(--orange); font-weight:700; font-size:1.1rem;">›</span>
-        Berlaku untuk sistem tertutup di mana tidak ada zat yang masuk atau keluar selama reaksi.
-      </li>
+    <ul class="summary-list">
+      <li>Massa total reaktan selalu sama dengan massa total produk dalam reaksi kimia.</li>
+      <li>Dikemukakan oleh Antoine Lavoisier pada tahun 1789 melalui percobaan pembakaran yang teliti.</li>
+      <li>Hukum ini merupakan dasar dari stoikiometri dan perhitungan kuantitatif kimia.</li>
+      <li>Dalam fisika modern, direvisi menjadi Hukum Kekekalan Massa-Energi (Einstein, 1905).</li>
+      <li>Berlaku untuk sistem tertutup di mana tidak ada zat yang masuk atau keluar selama reaksi.</li>
     </ul>
   </section>
 
